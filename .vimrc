@@ -2,7 +2,7 @@
 execute pathogen#infect()
 
 " use gmake on FreeBSD
-set makeprg=gmake
+" set makeprg=gmake
 
 " find tag file in some parent dir (for FreeBSD)
 set tags=./tags;
@@ -62,4 +62,9 @@ augroup resCur
 autocmd!
 autocmd BufWinEnter * call ResCur()
 augroup END
+
+" auto format C-style (/**/) comments
+set formatoptions+=r
+" but disable for C++ (//) style comments
+au FileType c,cpp setlocal comments-=:// comments+=f://
 
