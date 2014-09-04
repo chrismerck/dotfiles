@@ -4,17 +4,27 @@
 PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
 # colored ls
-alias ls='ls -G'
+if [ $(uname) == "Darwin" ]
+then
+  alias ls='ls -G'
+else
+  alias ls='ls --color'
+fi
 
 # git autocomplete
 source ~/.git-completion.bash
-alias gco='git co'
-alias gci='git ci'
-alias grb='git rb'
 
 # cabal path (OSX)
-export PATH="$HOME/Library/Haskell/bin:$PATH"
+if [ $(uname) == "Darwin" ] 
+then
+  export PATH="$HOME/Library/Haskell/bin:$PATH"
+else
+  true #export PATH="$HOME/Library/Haskell/bin:$PATH"
+fi
+
 
 # MacTex path (OSX)
-export PATH="/usr/texbin:$PATH"
+if [ `uname` == "Darwin" ]; then
+  export PATH="/usr/texbin:$PATH"
+fi
 
