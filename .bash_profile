@@ -14,6 +14,7 @@ fi
 # global git config
 git config --global color.ui true
 git config --global core.editor vim
+git config --global push.default simple
 git config --global user.name "Chris Merck" 
 git config --global user.email "$USER@$HOSTNAME"
 
