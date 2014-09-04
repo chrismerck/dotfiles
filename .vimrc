@@ -68,3 +68,6 @@ set formatoptions+=r
 " but disable for C++ (//) style comments
 au FileType c,cpp setlocal comments-=:// comments+=f://
 
+" markdown files use *.md extension
+au BufRead,BufNewFile *.md set filetype=markdown
+
