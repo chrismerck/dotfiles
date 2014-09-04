@@ -1,4 +1,4 @@
 echo "Creating links to dotfiles..."
 while read p; do
-  ln -s $(pwd)/$p ~/$p
+  ln -s -T $(pwd)/$p ~/$p
 done < dotfiles
