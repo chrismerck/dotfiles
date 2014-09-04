@@ -1,0 +1,7 @@
+.git-completion.bash 
+.vimrc
+.screenrc
+.zshrc
+.bash_profile
+.tmux.conf
+.vim

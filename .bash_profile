@@ -15,3 +15,6 @@ alias grb='git rb'
 # cabal path (OSX)
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 
+# MacTex path (OSX)
+export PATH="/usr/texbin:$PATH"
+
