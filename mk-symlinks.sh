@@ -2,6 +2,7 @@
 # If a target file alread exists it will
 #  NOT be overwritten, but will need to be
 #  removed manually.
+#testing
 echo "Creating links to dotfiles..."
 while read p; do
   ln -s -T $(pwd)/$p ~/$p
