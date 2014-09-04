@@ -11,6 +11,12 @@ else
   alias ls='ls --color'
 fi
 
+# global git config
+git config --global color.ui true
+git config --global core.editor vim
+git config --global user.name "Chris Merck" 
+git config --global user.email "$USER@$HOSTNAME"
+
 # git autocomplete
 source ~/.git-completion.bash
 
@@ -21,7 +27,6 @@ then
 else
   true #export PATH="$HOME/Library/Haskell/bin:$PATH"
 fi
-
 
 # MacTex path (OSX)
 if [ `uname` == "Darwin" ]; then
