@@ -36,3 +36,7 @@ fi
 
 # user path
 export PATH="$HOME/bin:$PATH"
+
+# for pip (python installer)
+export PATH="$HOME/.local/bin:$PATH"
+alias pipi='pip install --user'
