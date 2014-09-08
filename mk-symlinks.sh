@@ -4,5 +4,5 @@
 #  removed manually.
 echo "Creating links to dotfiles..."
 while read p; do
-  ln -s $(pwd)/$p ~/
+  ln -s $(pwd)/$p ~
 done < dotfiles
