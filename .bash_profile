@@ -11,6 +11,10 @@ else
   alias ls='ls --color'
 fi
 
+# enter virtualenv
+alias activate='source .env/bin/activate'
+# deactivate is already created by the above
+
 # global git config
 git config --global color.ui true
 git config --global core.editor vim
