@@ -71,3 +71,7 @@ au FileType c,cpp setlocal comments-=:// comments+=f://
 " markdown files use *.md extension
 au BufRead,BufNewFile *.md set filetype=markdown
 
+" more subtle spelling suggestions
+set spell
+hi clear SpellBad
+hi SpellBad cterm=underline,bold
