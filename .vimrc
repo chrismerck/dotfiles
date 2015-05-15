@@ -71,6 +71,9 @@ au FileType c,cpp setlocal comments-=:// comments+=f://
 " markdown files use *.md extension
 au BufRead,BufNewFile *.md set filetype=markdown
 
+" jinja2 files use *.jinja ext
+au BufRead,BufNewFile *.jinja set filetype=jinja
+
 " more subtle spelling suggestions
 set spell
 hi clear SpellBad
