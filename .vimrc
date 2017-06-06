@@ -13,6 +13,9 @@ set backspace=indent,eol,start
 " use X clipboard
 set clipboard=unnamedplus
 
+" highlight errors
+let c_space_errors=1
+
 set scroll=1
 set nocompatible
 set autoindent
