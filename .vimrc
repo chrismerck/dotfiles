@@ -17,9 +17,9 @@ set scroll=1
 set nocompatible
 set autoindent
 set nosmartindent
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=4
+set shiftwidth=4
+"set expandtab
 set showmatch
 "set vb t_vb=
 set ruler
