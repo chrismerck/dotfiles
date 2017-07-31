@@ -46,3 +46,7 @@ export PATH="$HOME/bin:$PATH"
 # for pip (python installer)
 export PATH="$HOME/.local/bin:$PATH"
 alias pipi='pip install --user'
+
+# gcc on OSX
+export PATH="$HOME/opt/gcc-arm-none-eabi-6-2017-q1-update/bin:$PATH"
+
