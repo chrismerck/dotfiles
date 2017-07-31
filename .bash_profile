@@ -22,6 +22,8 @@ git config --global core.editor vim
 git config --global user.name "Chris Merck" 
 git config --global user.email "$USER@$HOSTNAME"
 git config --global core.excludesfile ~/.gitignore_global
+# rebase by default to avoid nasty merge bubbles
+git config --global pull.rebase true
 
 
 # git autocomplete
@@ -49,4 +51,5 @@ alias pipi='pip install --user'
 
 # gcc on OSX
 export PATH="$HOME/opt/gcc-arm-none-eabi-6-2017-q1-update/bin:$PATH"
+
 
