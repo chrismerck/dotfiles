@@ -11,6 +11,11 @@ else
   alias ls='ls --color'
 fi
 
+# olibra aliases
+alias buildserver-start='aws ec2 start-instances --instance-ids i-088a25bb2b72a9db2 --profile buildserver'
+alias buildserver-stop='aws ec2 stop-instances --instance-ids i-088a25bb2b72a9db2 --profile buildserver'
+
+
 # enter virtualenv
 alias activate='source .env/bin/activate'
 # deactivate is already created by the above
@@ -52,4 +57,6 @@ alias pipi='pip install --user'
 # gcc on OSX
 export PATH="$HOME/opt/gcc-arm-none-eabi-6-2017-q1-update/bin:$PATH"
 
+# for bond_program_inject.sh
+export PATH="$HOME/src/olibra/MCU--merge/scripts:$PATH"
 
