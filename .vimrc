@@ -13,13 +13,19 @@ set backspace=indent,eol,start
 " use X clipboard
 set clipboard=unnamedplus
 
+" highlight errors
+let c_space_errors=1
+
 set scroll=1
 set nocompatible
 set autoindent
 set nosmartindent
+
+" use 2 spaces everywhere
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
 set showmatch
 "set vb t_vb=
 set ruler
