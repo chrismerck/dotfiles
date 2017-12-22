@@ -1,7 +1,7 @@
 
 # colored prompt
 #export TERM="xterm-color"
-PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]\$ '
 
 # colored ls
 if [ $(uname) == "Darwin" ]
@@ -11,9 +11,7 @@ else
   alias ls='ls --color'
 fi
 
-# olibra aliases
-alias buildserver-start='aws ec2 start-instances --instance-ids i-088a25bb2b72a9db2 --profile buildserver'
-alias buildserver-stop='aws ec2 stop-instances --instance-ids i-088a25bb2b72a9db2 --profile buildserver'
+alias doaglio="aglio --theme-full-width --theme-variables flatly -i docs/api.apib -o docs/templates/api_docs.html"
 
 
 # enter virtualenv
