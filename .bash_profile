@@ -1,7 +1,7 @@
 
 # colored prompt
 #export TERM="xterm-color"
-PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]\$ '
 
 # colored ls
 if [ $(uname) == "Darwin" ]
@@ -10,6 +10,9 @@ then
 else
   alias ls='ls --color'
 fi
+
+alias doaglio="aglio --theme-full-width --theme-variables flatly -i docs/api.apib -o docs/templates/api_docs.html"
+
 
 # enter virtualenv
 alias activate='source .env/bin/activate'
@@ -22,10 +25,17 @@ git config --global core.editor vim
 git config --global user.name "Chris Merck" 
 git config --global user.email "$USER@$HOSTNAME"
 git config --global core.excludesfile ~/.gitignore_global
+# rebase by default to avoid nasty merge bubbles
+git config --global pull.rebase true
 
 
 # git autocomplete
 source ~/.git-completion.bash
+
+
+###########
+# PATH Variable
+###########
 
 # cabal path (OSX)
 if [ $(uname) == "Darwin" ] 
@@ -47,4 +57,12 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 alias pipi='pip install --user'
 
+# microchip compiler
 export PATH="$PATH:/opt/microchip/xc8/v1.36/bin"
+
+# gcc on OSX
+export PATH="$HOME/opt/gcc-arm-none-eabi-6-2017-q1-update/bin:$PATH"
+
+# for bond_program_inject.sh
+export PATH="$HOME/src/olibra/MCU--merge/scripts:$PATH"
+

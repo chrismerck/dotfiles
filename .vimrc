@@ -20,9 +20,14 @@ set scroll=1
 set nocompatible
 set autoindent
 set nosmartindent
+
+" use 2 spaces everywhere
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
 set showmatch
 "set vb t_vb=
 set ruler
