@@ -1,7 +1,7 @@
 # dotfiles
 Configuration Files for Vim, Bash, Tmux, etc.
 
-## Usage
+## Installation
 
     mkdir ~/src
     cd ~/src
