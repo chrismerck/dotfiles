@@ -1,7 +1,21 @@
 
 # colored prompt
 #export TERM="xterm-color"
-PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]\$ '
+# Show exit status on failure.
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+    local curr_exit="$?"
+
+    local BRed='\[\e[0;91m\]'
+    local RCol='\[\e[0m\]'
+
+    PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]\$ '
+
+    if [ "$curr_exit" != 0 ]; then
+        PS1="[${BRed}$curr_exit${RCol}]$PS1"
+    fi
+}
 
 # colored ls
 if [ $(uname) == "Darwin" ]
@@ -13,6 +27,7 @@ fi
 
 alias doaglio="aglio --theme-full-width --theme-variables flatly -i docs/api.apib -o docs/templates/api_docs.html"
 
+source ~/.work_profile
 
 # enter virtualenv
 alias activate='source .env/bin/activate'
@@ -63,6 +78,7 @@ export PATH="$PATH:/opt/microchip/xc8/v1.36/bin"
 # gcc on OSX
 export PATH="$HOME/opt/gcc-arm-none-eabi-6-2017-q1-update/bin:$PATH"
 
-# for bond_program_inject.sh
-export PATH="$HOME/src/olibra/MCU--merge/scripts:$PATH"
+export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
 
+# timestamp 
+alias ts='python -c '"'"'import sys,time;t=time.time();[sys.stdout.write("[%5.03f] %s"%(time.time()-t,line)) for line in sys.stdin]'"'"''
