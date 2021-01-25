@@ -1,3 +1,4 @@
+#!/bin/bash 
 
 # colored prompt
 #export TERM="xterm-color"
@@ -10,11 +11,21 @@ __prompt_command() {
     local BRed='\[\e[0;91m\]'
     local RCol='\[\e[0m\]'
 
-    PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]\$ '
+		# Get Virtual Env
+		if [[ $VIRTUAL_ENV != "" ]]
+				then
+					# Strip out the path and just leave the env name
+					venv="(${VIRTUAL_ENV##*/})"
+		else
+					# In case you don't have one activated
+					venv=''
+		fi
 
-    if [ "$curr_exit" != 0 ]; then
-        PS1="[${BRed}$curr_exit${RCol}]$PS1"
-    fi
+    PS1='${venv}\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]\$ '
+
+		if [ "$curr_exit" != 0 ]; then
+				PS1="[${BRed}$curr_exit${RCol}]$PS1"
+		fi
 }
 
 # colored ls
@@ -38,7 +49,7 @@ git config --global color.ui true
 git config --global core.editor vim
 #git config --global push.default simple
 git config --global user.name "Chris Merck" 
-git config --global user.email "$USER@$HOSTNAME"
+git config --global user.email "chrismerck@gmail.com"
 git config --global core.excludesfile ~/.gitignore_global
 # rebase by default to avoid nasty merge bubbles
 git config --global pull.rebase true
