@@ -10,8 +10,11 @@ set tags=./tags;
 " support backspace on FreeBSD
 set backspace=indent,eol,start
 
-" use X clipboard
-set clipboard=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux (X)
+endif
 
 " highlight errors
 let c_space_errors=1
