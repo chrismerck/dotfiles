@@ -89,3 +89,5 @@ au BufRead,BufNewFile *.jinja set filetype=jinja
 set spell
 hi clear SpellBad
 hi SpellBad cterm=underline,bold
+
+noremap <Space> :
